@@ -1,13 +1,14 @@
 #!/bin/bash
 
 set -e
-WORK_DIR=$@
-all_files+=( $(ls  -d $WORK_DIR/*) )
 
 if [ -z $@ ] ; then 
     echo "please pass your working directory as an argument..."
     exit 1
 fi
+
+WORK_DIR=$@
+all_files+=( $(ls  -d $WORK_DIR/*) )
 
 echo "switching to $WORK_DIR"
 cd $WORK_DIR
